@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zapp-Tek</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Stack Sans Notch', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            background: #fff;
+            color: #000;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Subtle animated background pattern */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(0, 0, 0, 0.02) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(0, 0, 0, 0.02) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+            width: 100%;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .logo {
+            font-size: 56px;
+            margin-bottom: 30px;
+            display: inline-block;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        h1 {
+            font-size: 56px;
+            font-weight: 900;
+            letter-spacing: -2px;
+            margin-bottom: 20px;
+            color: #000;
+            font-family: 'Stack Sans Notch', sans-serif;
+        }
+
+        .divider {
+            width: 60px;
+            height: 3px;
+            background: #000;
+            margin: 20px auto 30px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 18px;
+            line-height: 1.8;
+            font-weight: 300;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .construction-status {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin: 50px 0;
+            font-size: 16px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .status-dot {
+            width: 12px;
+            height: 12px;
+            background: #000;
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 0.3;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+        }
+
+        .social-section {
+            margin-top: 50px;
+            text-align: center;
+            padding-top: 50px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .social-label {
+            display: block;
+            color: #999;
+            margin-bottom: 20px;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-links a {
+            width: 48px;
+            height: 48px;
+            border: 2px solid #e0e0e0;
+            border-radius: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #000;
+            transition: all 0.3s ease;
+            font-size: 20px;
+            font-weight: 600;
+            background: #f9f9f9;
+        }
+
+        .social-links a:hover {
+            border-color: #000;
+            background: #000;
+            color: #fff;
+            transform: translateY(-3px);
+        }
+
+        .footer {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid #e0e0e0;
+            text-align: center;
+            color: #999;
+            font-size: 13px;
+            font-weight: 300;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 42px;
+                letter-spacing: -1px;
+            }
+
+            .subtitle {
+                font-size: 16px;
+            }
+
+            .logo {
+                font-size: 48px;
+            }
+
+            .header {
+                margin-bottom: 60px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 32px;
+            }
+
+            .subtitle {
+                font-size: 15px;
+            }
+
+            .logo {
+                font-size: 40px;
+                margin-bottom: 20px;
+            }
+
+            .social-links {
+                gap: 15px;
+            }
+
+            .social-links a {
+                width: 44px;
+                height: 44px;
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">◆</div>
+            <h1>Zapp-tek</h1>
+            <div class="divider"></div>
+            <p class="subtitle">
+                We're building something extraordinary. 
+                Stay tuned for updates.
+            </p>
+        </div>
+
+        <div class="construction-status">
+            <div class="status-dot"></div>
+            <span>Under Construction</span>
+        </div>
+
+        <div class="social-section">
+            <label class="social-label">Follow Our Journey</label>
+            <div class="social-links">
+                <a href="#" title="Twitter" aria-label="Follow on Twitter">𝕏</a>
+                <a href="#" title="LinkedIn" aria-label="Follow on LinkedIn">in</a>
+                <a href="#" title="Instagram" aria-label="Follow on Instagram">@</a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2026 Zapp-tek. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
